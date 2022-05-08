@@ -20,9 +20,9 @@ namespace FlatRockWebScraping
                 MatchCollection matches = regex.Matches(htmlSource);
                 foreach (Match match in matches)
                 {
-                    string productName = match.Groups["name"].Value;
-                    string productPrice = match.Groups["price"].Value;
-                    string productRating = match.Groups["rating"].Value;
+                    string productName = ProductInfoParser.ParseName(match.Groups["name"].Value);
+                    decimal productPrice = ProductInfoParser.ParsePrice(match.Groups["price"].Value);
+                    decimal productRating = ProductInfoParser.ParseRating(match.Groups["rating"].Value);
                     Product product = new Product(productName, productPrice, productRating);
                     products.Add(product);
                 }
