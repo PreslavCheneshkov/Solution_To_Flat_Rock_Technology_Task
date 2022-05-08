@@ -15,32 +15,10 @@ namespace FlatRockWebScraping
             this.Price = price;
             this.Rating = rating;
         }
-        private string name;
-        private decimal price;
-        private decimal rating;
 
-        public string Name 
-        {   get => this.name; 
-            private set
-            {
-                this.name = value;
-            }
-        }
-        public decimal Price 
-        {
-            get => this.price; 
-            private  set
-            {
-                this.price = value;
-            }
-        }
-        public decimal Rating 
-        { get => this.rating;
-            private set
-            {
-                this.rating = value;
-            }
-        }
+        public string Name { get; private set; }
+        public decimal Price { get; private set; }
+        public decimal Rating { get; private set; }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
